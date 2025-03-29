@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/catalogo.html">Catálogo</a></li>
+                <li><a href="/cotiza.html">Cotizá tu auto</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <form action="enviar-consulta">
+            <h2>Consulta</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="auto-referido">Auto referido:</label>
+            <input type="text" id="auto-referido" name="auto-referido">
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" required>
+
+            <label for="consulta">Consulta:</label>
+            <textarea id="consulta" name="consulta" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <h2>LOGO</h2>
+        </div>
+        <nav class="footer-links">
+            <ul>
+                <li><a href="#">Acerca nuestro</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Nuestras redes:</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <!-- Aquí irían los íconos de redes sociales -->
+            <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
+        </div>
+    </footer>
+</body>
+</html>

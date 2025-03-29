@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Concesionaria de Autos</title>
+    <!-- Aquí irá el CSS en futuras entregas -->
 </head>
 <body>
-    
+
+    <header>
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="/catalogo.html">Catálogo</a></li>
+                <li><a href="/cotiza.html">Cotizá tu auto</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="novedades">
+            <h2 id="novedades">Novedades</h2>
+            <div class="novedades-container">
+                <!-- Auto 1 -->
+                <article class="auto-card">
+                    <img src="auto1.jpg" alt="Auto Chevrolet">
+                    <p>Nombre auto - Modelo - Kilómetros</p>
+                    <p><strong>$Precio</strong></p>
+                    <button>Me interesa</button>
+                </article>
+
+                <!-- Auto 2 -->
+                <article class="auto-card">
+                    <img src="auto2.jpg" alt="Auto Renault">
+                    <p>Nombre auto - Modelo - Kilómetros</p>
+                    <p><strong>$Precio</strong></p>
+                    <button>Me interesa</button>
+                </article>
+
+                <!-- Auto 3 -->
+                <article class="auto-card">
+                    <img src="auto3.jpg" alt="Auto Toyota">
+                    <p>Nombre auto - Modelo - Kilómetros</p>
+                    <p><strong>$Precio</strong></p>
+                    <button>Me interesa</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="cotizar-contacto">
+            <div class="cotizar">
+                <img src="cotizar-auto.jpg" alt="Cotizá tu auto">
+                <p>
+                    Si estás interesado en vender tu auto, nosotros lo evaluamos y te damos una cotización.
+                    Podés utilizar este valor para cambiarlo por otro auto de nuestro catálogo o simplemente venderlo.
+                </p>
+                <button>Cotizá tu auto</button>
+            </div>
+            <div class="consulta">
+                <img src="consulta.jpg" alt="Consulta técnica">
+                <p>¿Querés sacarte una duda sobre un auto, forma de pago u otra cosa?</p>
+                <button>Hacenos tu consulta</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <h2>LOGO</h2>
+        </div>
+        <nav class="footer-links">
+            <ul>
+                <li><a href="#">Acerca nuestro</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Nuestras redes:</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <!-- Aquí irían los íconos de redes sociales -->
+            <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
+        </div>
+    </footer>
+
+    <!-- Aquí se integrará JavaScript para interactividad en futuras entregas -->
 </body>
 </html>
