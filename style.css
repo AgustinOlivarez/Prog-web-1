@@ -23,12 +23,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-.logo h1 {
+.logo {
     color: #9966ff;
+    margin-bottom: 1rem;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -43,6 +46,7 @@ header {
 .nav-links a:hover {
     color: #9966ff;
 }
+
 /* Novedades */
 main {
     padding: 2rem;
@@ -50,32 +54,25 @@ main {
     margin-right: 5%;
 }
 
-h2 {
-    color: #9966ff;
-    margin-bottom: 1rem;
-}
 
-.novedades-container {
+.novedades-container, .autos-container {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+/* Tarjetas de autos */
 .auto-card {
     width: 300px;
     background-color: transparent;
-    /* border: #1a0d33 solid 10px; */
     border-radius: 16px;
     overflow: hidden;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    position: relative;
 }
 
-/* Fondo blanco solo para la imagen */
 .auto-card img {
     background-color: white;
     border: #1a0d33 solid 10px;
@@ -87,7 +84,6 @@ h2 {
     display: block;
 }
 
-/* Fondo oscuro para el contenido */
 .auto-card p {
     background-color: #1a0d33;
     margin: 0;
@@ -153,7 +149,7 @@ h2 {
 
 .cotizar img, .consulta img {
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
     filter: brightness(0.4);
     border-top-left-radius: 15px;
@@ -177,7 +173,8 @@ h2 {
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
-    border-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     cursor: pointer;
 }
 
@@ -185,51 +182,18 @@ h2 {
     background-color: #582aa8;
 }
 
-/* Footer */
-footer {
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: #eeeded;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.footer-logo h2 {
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
     color: #9966ff;
 }
 
-.footer-links ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #6633cc;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-}
-
+/* Formularios*/
 form {
     background-color: #1a0d33;
     color: white;
     padding: 2rem;
-    max-width: 600px;
+    max-width: 50%;
     margin: 2rem auto;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -282,3 +246,43 @@ form button:hover {
     background-color: #582aa8;
 }
 
+/* Footer */
+footer {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #eeeded;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.footer-logo h2 {
+    color: #9966ff;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #6633cc;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
