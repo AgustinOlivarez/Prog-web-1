@@ -71,6 +71,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    object-fit: fill;
 }
 
 .auto-card img {
@@ -154,6 +155,7 @@ main {
     filter: brightness(0.4);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    object-fit: fill;
 }
 
 .cotizar p, .consulta p {
@@ -285,4 +287,82 @@ footer {
 .social-icons img {
     width: 30px;
     height: 30px;
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .logo h2 {
+        font-size: 1.2rem;
+    }
+    .nav-links a{
+        font-size: 0.8rem;
+    }
+
+    form {
+        max-width: 100%;
+        margin: 0,5rem;
+        padding: 1rem;
+    }
+
+    form input,
+    form textarea {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: static;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .logo h2 {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+
+    .novedades-container, .autos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cotizar-contacto {
+        flex-direction: column;
+    }
+
+    .cotizar, .consulta {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 15px;
+    }
+    .cotizar img, .consulta img {
+        object-fit: fill;
+    }
+
+    form {
+        max-width: 100%;
+        margin: 0,5rem;
+        padding: 1rem;
+    }
+
+    form input,
+    form textarea {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
 }
