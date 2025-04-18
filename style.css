@@ -195,20 +195,35 @@ form {
     background-color: #1a0d33;
     color: white;
     padding: 2rem;
-    max-width: 50%;
+    max-width: 80%;
     margin: 2rem auto;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+  }
+
+  .form-group-consulta{
+    grid-column: span 2;
+  }
+
+form label{
+    grid-column: span 2;
 }
+
 
 form h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #9966ff;
     text-align: center;
+    grid-column: span 2;
 }
 
 form label {
@@ -218,6 +233,7 @@ form label {
 
 form input,
 form textarea {
+    width: 100%;
     padding: 0.8rem;
     border: none;
     border-radius: 8px;
@@ -225,6 +241,7 @@ form textarea {
     background-color: #fff;
     color: #000;
     outline: none;
+    grid-column: span 1;
 }
 
 form input:focus,
@@ -233,6 +250,7 @@ form textarea:focus {
 }
 
 form button {
+    width: 40%;
     background-color: #9966ff;
     color: white;
     border: none;
@@ -242,6 +260,8 @@ form button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 1rem;
+    grid-column: span 2;
+    justify-self: center;
 }
 
 form button:hover {
@@ -298,6 +318,9 @@ footer {
     }
 
     form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         max-width: 100%;
         margin: 0,5rem;
         padding: 1rem;
@@ -307,6 +330,10 @@ footer {
     form textarea {
         font-size: 1rem;
         padding: 0.4rem;
+        width: 100%;
+    }
+    form button {
+        align-self: center;
     }
 }
 
@@ -355,6 +382,9 @@ footer {
     }
 
     form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         max-width: 100%;
         margin: 0,5rem;
         padding: 1rem;
@@ -364,5 +394,9 @@ footer {
     form textarea {
         font-size: 0.7rem;
         padding: 0.4rem;
+        width: 100%;
+    }
+    form button {
+        align-self: center;
     }
 }
