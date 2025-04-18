@@ -28,30 +28,45 @@
 
             <form action="cotizar-auto">
                 <h2>Cotizá tu auto</h2>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                
-                <label for="marca">Marca del auto:</label>
-                <input type="text" id="marca" name="marca" required>
-                
-                <label for="modelo">Modelo del auto:</label>
-                <input type="text" id="modelo" name="modelo" required>
-                
-                <label for="anio">Año del auto:</label>
-                <input type="number" id="anio" name="anio" min="1990" max="2025" required>
-                
-                <label for="kilometros">Kilómetros:</label>
-                <input type="text" id="kilometros" name="kilometros" required>
-                
-                <label for="imagenes">Imágenes del auto:</label>
-                <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple required>
-                
-                <label for="detalles">Detalles:</label>
-                <textarea id="consulta" name="consulta" rows="4" required></textarea>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="marca">Marca del auto:</label>
+                    <input type="text" id="marca" name="marca" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="modelo">Modelo del auto:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="anio">Año del auto:</label>
+                    <input type="number" id="anio" name="anio" min="1990" max="2025" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="kilometros">Kilómetros:</label>
+                    <input type="text" id="kilometros" name="kilometros" required>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="imagenes">Imágenes del auto:</label>
+                    <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple required>
+                </div>
+                    
+                    <div class="form-group">
+                        <label for="detalles">Detalles:</label>
+                        <textarea id="consulta" name="consulta" rows="4" required></textarea>
+                    </div>
                 
                 <button type="submit">Enviar</button>
                 

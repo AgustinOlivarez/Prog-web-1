@@ -28,20 +28,31 @@
 
             <form action="enviar-consulta">
                 <h2>Consulta</h2>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
     
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
     
-                <label for="auto-referido">Auto referido:</label>
-                <input type="text" id="auto-referido" name="auto-referido">
+                <div class="form-group">
+                    <label for="auto-referido">Auto referido:</label>
+                    <input type="text" id="auto-referido" name="auto-referido">
+                </div>
     
-                <label for="asunto">Asunto:</label>
-                <input type="text" id="asunto" name="asunto" required>
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
     
-                <label for="consulta">Consulta:</label>
-                <textarea id="consulta" name="consulta" rows="4" required></textarea>
+                <div class="form-group-consulta">
+                    <label for="consulta">Consulta:</label>
+                    <textarea id="consulta" name="consulta" rows="4" required></textarea>
+                </div>
     
                 <button type="submit">Enviar</button>
             </form>
