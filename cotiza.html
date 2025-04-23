@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fierrópolis</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -28,47 +29,52 @@
 
             <form action="cotizar-auto">
                 <h2>Cotizá tu auto</h2>
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                
+                <div class="row">
+
+                    <div class="form-group col-12 col-sm-6 col-md-6">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group col-12 col-sm-6 col-md-6"> 
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
                 </div>
                     
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-sm-6 col-md-3">
+                      <label for="nombre">Nombre Completo:</label>
+                      <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-3">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-3">
+                      <label for="marca">Marca del auto:</label>
+                      <input type="text" id="marca" name="marca" required>
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-3">
+                      <label for="modelo">Modelo del auto:</label>
+                      <input type="text" id="modelo" name="modelo" required>
+                    </div>
+                  </div>
                     
-                <div class="form-group">
-                    <label for="marca">Marca del auto:</label>
-                    <input type="text" id="marca" name="marca" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="modelo">Modelo del auto:</label>
-                    <input type="text" id="modelo" name="modelo" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="anio">Año del auto:</label>
-                    <input type="number" id="anio" name="anio" min="1990" max="2025" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="kilometros">Kilómetros:</label>
-                    <input type="text" id="kilometros" name="kilometros" required>
-                </div>
-                    
-                <div class="form-group">
+                <div class="form-group col-12 col-sm-6 col-md-6">
                     <label for="imagenes">Imágenes del auto:</label>
                     <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple required>
                 </div>
                     
-                    <div class="form-group">
+                <div class="form-group col-12">
                         <label for="detalles">Detalles:</label>
                         <textarea id="consulta" name="consulta" rows="4" required></textarea>
-                    </div>
+                </div>
                 
-                <button type="submit">Enviar</button>
+                <div class="boton-enviar">
+                    <button type="submit">Enviar</button>
+                </div>
                 
             </form>
             
@@ -92,5 +98,7 @@
             <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
 </body>
 </html>
