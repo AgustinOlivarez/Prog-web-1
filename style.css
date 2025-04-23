@@ -7,7 +7,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: #e0dddd;
+    background-color: #e0dddd !important;
     color: #1a1a1a;
 }
 
@@ -24,6 +24,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    z-index: 9999;
     top: 0;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
@@ -102,6 +103,19 @@ main {
     border-bottom: #1a0d33 solid 10px;
     border-bottom-left-radius: 16px;
 }
+
+/* Carrusel */
+.carousel-item {
+    text-align: center !important;
+  }
+  
+  .carousel-item img {
+    height: 500px !important;
+    width: 700px !important;
+    display: inline-block !important;
+    object-fit: contain !important;
+  }
+  
 
 /* Botón separado visualmente, al pie */
 .auto-card button {
@@ -184,7 +198,7 @@ main {
     background-color: #582aa8;
 }
 
-h2 {
+h2, #novedades {
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #9966ff;
@@ -199,9 +213,6 @@ form {
     margin: 2rem auto;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
 }
 
 .form-group {
@@ -209,26 +220,18 @@ form {
     flex-direction: column;
   }
 
-  .form-group-consulta{
-    grid-column: span 2;
-  }
-
-form label{
-    grid-column: span 2;
-}
-
 
 form h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #9966ff;
     text-align: center;
-    grid-column: span 2;
 }
 
 form label {
     font-weight: bold;
     margin-bottom: 0.2rem;
+    color: #9966ff;
 }
 
 form input,
@@ -241,7 +244,6 @@ form textarea {
     background-color: #fff;
     color: #000;
     outline: none;
-    grid-column: span 1;
 }
 
 form input:focus,
@@ -249,6 +251,10 @@ form textarea:focus {
     border: 3px solid #9966ff;
 }
 
+.boton-enviar {
+    display: flex;
+    justify-content: center;
+}
 form button {
     width: 40%;
     background-color: #9966ff;
@@ -260,7 +266,6 @@ form button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 1rem;
-    grid-column: span 2;
     justify-self: center;
 }
 
@@ -317,6 +322,12 @@ footer {
         font-size: 0.8rem;
     }
 
+    .carousel-item img {
+        height: 350px !important;
+        width: 500px !important;
+      }
+      
+
     form {
         display: flex;
         flex-direction: column;
@@ -334,6 +345,9 @@ footer {
     }
     form button {
         align-self: center;
+    }
+    form label {
+        font-size: 0.8rem;
     }
 }
 
@@ -356,6 +370,7 @@ footer {
     .nav-links {
         flex-direction: column;
         gap: 1rem;
+        padding-left: 0%;
     }
 
     .nav-links a {
@@ -367,6 +382,11 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
+    .carousel-item img {
+        height: 250px !important;
+        width: 250px !important;
+      }
 
     .cotizar-contacto {
         flex-direction: column;
@@ -381,15 +401,6 @@ footer {
         object-fit: fill;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 100%;
-        margin: 0,5rem;
-        padding: 1rem;
-    }
-
     form input,
     form textarea {
         font-size: 0.7rem;
@@ -398,5 +409,9 @@ footer {
     }
     form button {
         align-self: center;
+    }
+
+    form label {
+        font-size: 0.6rem;
     }
 }
