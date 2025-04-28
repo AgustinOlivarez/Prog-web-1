@@ -27,7 +27,7 @@
 
         <section>
 
-            <form action="enviar-consulta">
+            <form class="enviar-consulta" action="enviar-consulta">
                 <h2>Hacenos tu consulta</h2>
                 <div class="row">
 
@@ -41,20 +41,26 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                 </div>
-    
-                <div class="form-group col-12 col-sm-8 col-md-8">
-                    <label for="auto-referido">Auto referido:</label>
-                    <input type="text" id="auto-referido" name="auto-referido">
+                
+                <div class="row">
+                    <div class="form-group col-12 col-sm-8 col-md-8">
+                        <label for="auto-referido">Auto referido:</label>
+                        <input type="text" id="auto-referido" name="auto-referido">
+                    </div>
                 </div>
-    
-                <div class="form-group col-12 col-sm-8 col-md-8">
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" id="asunto" name="asunto" required>
+
+                <div class="row">
+                    <div class="form-group col-12 col-sm-8 col-md-8">
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
                 </div>
-    
-                <div class="form-group-consulta col-12">
-                    <label for="consulta">Consulta:</label>
-                    <textarea id="consulta" name="consulta" rows="4" required></textarea>
+
+                <div class="row">
+                    <div class="form-group-consulta col-12">
+                        <label for="consulta">Consulta:</label>
+                        <textarea id="consulta" name="consulta" rows="4" required></textarea>
+                    </div>
                 </div>
     
                 <div class="boton-enviar">
