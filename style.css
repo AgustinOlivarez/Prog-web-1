@@ -12,7 +12,14 @@ body {
 }
 
 /* Header */
-header {
+header{
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+  background-color: #e0dddd; 
+}
+
+.container-fluid {
   background-color: #1a0d33;
   margin-left: 5%;
   margin-right: 5%;
@@ -23,15 +30,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  z-index: 9999;
-  top: 0;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+header .navbar{
+  padding-top: 0% !important;
+  padding-bottom: 0% !important;
+  background-color:  #e0dddd!important;
 }
 
 .logo {
   color: #9966ff;
   margin-bottom: 1rem;
+}
+
+.navbar-toggler {
+  background-color: #9966ff !important;
+  border: white solid 2px !important;
 }
 .nav-links {
   list-style: none;
@@ -42,6 +56,11 @@ header {
 .nav-links a {
   color: white;
   text-decoration: none;
+}
+
+.active{
+  color: #9966ff !important;
+  font-weight: bold !important;
 }
 
 .nav-links a:hover {
@@ -148,6 +167,7 @@ main {
 .consulta {
   flex: 1;
   position: relative;
+  height: 450px;
   color: white;
   border: #1a0d33 solid 10px;
   border-bottom: 20px solid #1a0d33;
@@ -175,6 +195,7 @@ main {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   object-fit: fill;
+  z-index: 0;
 }
 
 .cotizar p,
@@ -186,8 +207,8 @@ main {
   font-size: 1.1rem;
 }
 
-.cotizar button,
-.consulta button {
+.cotizar a,
+.consulta a {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -199,16 +220,19 @@ main {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
-.cotizar button:hover,
-.consulta button:hover {
+.cotizar a:hover,
+.consulta a:hover {
   background-color: #582aa8;
 }
 
 h2,
 #novedades,
-#donde-estamos {
+#donde-estamos,
+#autos {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.8rem;
@@ -421,6 +445,7 @@ footer {
     width: 100%;
     margin-bottom: 1rem;
     border-radius: 15px;
+    height: 450px;
   }
   .cotizar img,
   .consulta img {
