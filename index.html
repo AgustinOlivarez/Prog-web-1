@@ -14,17 +14,34 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <h1>Fierrópolis</h1>
-        <h2>La ciudad del buen fierro</h2>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="cotiza.html">Cotizá tu auto</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            <div class="logo">
+              <h1>Fierrópolis</h1>
+              <h2>La ciudad del buen fierro</h2>
+            </div>
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cotiza.html">Cotizá tu auto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
         </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -112,7 +129,7 @@
             otro auto de nuestro catálogo o simplemente venderlo.
           </p>
           <!-- mas adelante haremos la funcionalidad del boton -->
-          <button>Cotizá tu auto</button>
+          <a class="boton-cotizar" href="cotiza.html">Cotizá tu auto</a>
         </div>
         <div class="consulta">
           <img src="assets/consulta_mecanica.jpg" alt="Consulta técnica" />
@@ -120,7 +137,7 @@
             ¿Querés sacarte una duda sobre un auto, forma de pago u otra cosa?
           </p>
           <!-- mas adelante haremos la funcionalidad del boton -->
-          <button>Hacenos tu consulta</button>
+          <a class="boton-consultar" href="contacto.html">Hacenos tu consulta</a>
         </div>
       </section>
 
