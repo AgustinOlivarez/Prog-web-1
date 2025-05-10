@@ -1,96 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fierrópolis</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+    crossorigin="anonymous"
+  />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <h1>Fierrópolis</h1>
-            <h2>La ciudad del buen fierro</h2>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+            <div class="logo">
+              <h1>Fierrópolis</h1>
+              <h2>La ciudad del buen fierro</h2>
+            </div>
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Cotizá tu auto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+          </div>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="#">Cotizá tu auto</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+      </nav>
     </header>
-    
-    <main> 
 
-        <section>
+    <main>
+      <section>
+        <form class="cotizar-auto">
+          <h2>Cotizá tu auto</h2>
 
-            <form action="cotizar-auto">
-                <h2>Cotizá tu auto</h2>
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="marca">Marca del auto:</label>
-                    <input type="text" id="marca" name="marca" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="modelo">Modelo del auto:</label>
-                    <input type="text" id="modelo" name="modelo" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="anio">Año del auto:</label>
-                    <input type="number" id="anio" name="anio" min="1990" max="2025" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="kilometros">Kilómetros:</label>
-                    <input type="text" id="kilometros" name="kilometros" required>
-                </div>
-                    
-                <div class="form-group">
-                    <label for="imagenes">Imágenes del auto:</label>
-                    <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple required>
-                </div>
-                    
-                    <div class="form-group">
-                        <label for="detalles">Detalles:</label>
-                        <textarea id="consulta" name="consulta" rows="4" required></textarea>
-                    </div>
-                
-                <button type="submit">Enviar</button>
-                
-            </form>
-            
-        </section>
+          <div class="row">
+            <div class="form-group col-12 col-sm-6 col-md-6">
+              <label for="nombre">Nombre Completo:</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <div class="form-group col-12 col-sm-6 col-md-6">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-12 col-sm-6 col-md-3">
+              <label for="nombre">Nombre Completo:</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div class="form-group col-12 col-sm-6 col-md-3">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group col-12 col-sm-6 col-md-3">
+              <label for="marca">Marca del auto:</label>
+              <input type="text" id="marca" name="marca" required />
+            </div>
+            <div class="form-group col-12 col-sm-6 col-md-3">
+              <label for="modelo">Modelo del auto:</label>
+              <input type="text" id="modelo" name="modelo" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-12 col-sm-6 col-md-6">
+              <label for="imagenes">Imágenes del auto:</label>
+              <input
+                type="file"
+                id="imagenes"
+                name="imagenes"
+                accept="image/*"
+                multiple
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-12">
+              <label for="detalles">Detalles:</label>
+              <textarea
+                id="consulta"
+                name="consulta"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="boton-enviar">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
     </main>
 
     <footer>
-        <div class="logo">
-            <h1>Fierrópolis</h1>
-            <h2>La ciudad del buen fierro</h2>
-        </div>
-        <nav class="footer-links">
-            <ul>
-                <li><a href="#">Acerca nuestro</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Nuestras redes:</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <!-- Aquí irían los íconos de redes sociales -->
-            <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
-        </div>
+      <div class="logo">
+        <h1>Fierrópolis</h1>
+        <h2>La ciudad del buen fierro</h2>
+      </div>
+      <nav class="footer-links">
+        <ul>
+          <li><a href="#">Acerca nuestro</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Nuestras redes:</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <!-- Aquí irían los íconos de redes sociales -->
+        <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
+      </div>
     </footer>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
+

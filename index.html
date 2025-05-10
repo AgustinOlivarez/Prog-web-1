@@ -1,95 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fierrópolis</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <h1>Fierrópolis</h1>
-            <h2>La ciudad del buen fierro</h2>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            <div class="logo">
+              <h1>Fierrópolis</h1>
+              <h2>La ciudad del buen fierro</h2>
+            </div>
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cotiza.html">Cotizá tu auto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+          </div>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="cotiza.html">Cotizá tu auto</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+      </nav>
     </header>
 
     <main>
-        <section aria-labelledby="novedades">
-            <h2 id="novedades">Novedades</h2>
-            <div class="novedades-container">
-                <!-- Auto 1 -->
-                <article class="auto-card">
-                    <img src="assets/onix.avif" alt="Auto Chevrolet">
-                    <p>Nombre auto - Modelo - Kilómetros</p>
-                    <p><strong>$Precio</strong></p>
-                    <button>Me interesa</button>
-                </article>
-
-                <!-- Auto 2 -->
-                <article class="auto-card">
-                    <img src="assets/sandero.jpg" alt="Auto Renault">
-                    <p>Nombre auto - Modelo - Kilómetros</p>
-                    <p><strong>$Precio</strong></p>
-                    <button>Me interesa</button>
-                </article>
-
-                <!-- Auto 3 -->
-                <article class="auto-card">
-                    <img src="assets/yaris.png" alt="Auto Toyota">
-                    <p>Nombre auto - Modelo - Kilómetros</p>
-                    <p><strong>$Precio</strong></p>
-                    <button>Me interesa</button>
-                </article>
+      <section aria-labelledby="novedades">
+        <h2 id="novedades">Novedades</h2>
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide-to="0"
+              data-bs-theme="dark"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide-to="1"
+              data-bs-theme="dark"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide-to="2"
+              data-bs-theme="dark"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="assets/onix.avif"
+                class="d-block"
+                alt="Chevrolet Onix"
+              />
             </div>
-        </section>
+            <div class="carousel-item">
+              <img
+                src="assets/sandero.jpg"
+                class="d-block"
+                alt="Renault Sandero"
+              />
+            </div>
+            <div class="carousel-item">
+              <img src="assets/yaris.png" class="d-block" alt="Toyota Yaris" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+            data-bs-theme="dark"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+            data-bs-theme="dark"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
 
-        <section class="cotizar-contacto">
-            <div class="cotizar">
-                <img src="assets/auto_en_bosque.jpg" alt="Cotizá tu auto">
-                <p>
-                    Si estás interesado en vender tu auto, nosotros lo evaluamos y te damos una cotización.
-                    Podés utilizar este valor para cambiarlo por otro auto de nuestro catálogo o simplemente venderlo.
-                </p>
-                <!-- mas adelante haremos la funcionalidad del boton -->
-                <button>Cotizá tu auto</button>
-            </div>
-            <div class="consulta">
-                <img src="assets/consulta_mecanica.jpg" alt="Consulta técnica">
-                <p>¿Querés sacarte una duda sobre un auto, forma de pago u otra cosa?</p>
-                <!-- mas adelante haremos la funcionalidad del boton -->
-                <button>Hacenos tu consulta</button>
-            </div>
-        </section>
+      <section class="cotizar-contacto">
+        <div class="cotizar">
+          <img src="assets/auto_en_bosque.jpg" alt="Cotizá tu auto" />
+          <p>
+            Si estás interesado en vender tu auto, nosotros lo evaluamos y te
+            damos una cotización. Podés utilizar este valor para cambiarlo por
+            otro auto de nuestro catálogo o simplemente venderlo.
+          </p>
+          <!-- mas adelante haremos la funcionalidad del boton -->
+          <a class="boton-cotizar" href="cotiza.html">Cotizá tu auto</a>
+        </div>
+        <div class="consulta">
+          <img src="assets/consulta_mecanica.jpg" alt="Consulta técnica" />
+          <p>
+            ¿Querés sacarte una duda sobre un auto, forma de pago u otra cosa?
+          </p>
+          <!-- mas adelante haremos la funcionalidad del boton -->
+          <a class="boton-consultar" href="contacto.html">Hacenos tu consulta</a>
+        </div>
+      </section>
+
+      <section class="donde-estamos">
+        <h2 id="donde-estamos">¿Dónde estamos?</h2>
+        <div class="ratio ratio-21x9 mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13142.49968412566!2d-58.487593141546704!3d-34.56305097495646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb68f10743fe1%3A0x1ca42d12a7c5cc22!2sViel%20Automotores%20Usados!5e0!3m2!1ses!2sar!4v1745369863420!5m2!1ses!2sar"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div></div>
+      </section>
     </main>
 
     <footer>
-        <div class="logo">
-            <h1>Fierrópolis</h1>
-            <h2>La ciudad del buen fierro</h2>
-        </div>
-        <nav class="footer-links">
-            <ul>
-                <li><a href="#">Acerca nuestro</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Nuestras redes:</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <!-- Aquí irían los íconos de redes sociales -->
-            <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
-        </div>
+      <div class="logo">
+        <h1>Fierrópolis</h1>
+        <h2>La ciudad del buen fierro</h2>
+      </div>
+      <nav class="footer-links">
+        <ul>
+          <li><a href="#">Acerca nuestro</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Nuestras redes:</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <!-- Aquí irían los íconos de redes sociales -->
+        <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
+      </div>
     </footer>
 
     <!-- Aquí se integrará JavaScript para interactividad en futuras entregas -->
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
