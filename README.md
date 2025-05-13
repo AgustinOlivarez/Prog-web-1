@@ -15,4 +15,7 @@ Con este proyecto lo que buscaremos es diseñar las bases de una página de vent
 - La página final permitirá fundamentalmente explorar el catálogo de autos, observar el detalle de cada auto, realizar consultas y contactarse con la empresa para tasar un auto propio
 
 ## Idea a seguir:
-[Maqueta](https://www.figma.com/design/VaNRf2ZRJJK8Ff3JHPTYpA/Maqueta-Programacion-Web-1?node-id=0-1&t=qkwjbylHBxPQ8Mk1-1)
+[Maqueta](https://www.figma.com/design/VaNRf2ZRJJK8Ff3JHPTYpA/Maqueta-Programacion-Web-1?node-id=0-1&t=qkwjbylHBxPQ8Mk1-1)  
+
+## Diagrama de flujo:
+[Diagrama](https://drive.google.com/file/d/1VXwjmyauJjNA5Wb6Ch-tszJK-eJkydJR/view?usp=sharing)
