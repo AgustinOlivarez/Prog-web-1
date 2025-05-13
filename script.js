@@ -1,82 +1,89 @@
-// === VARIABLES GLOBALES ===
-class Auto {
-  constructor(marca, modelo, kilometros, precio) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.kilometros = kilometros;
-    this.precio = precio;
+import Catalogo from "./catalogo.js";
+import Auto from "./auto.js";
+
+let catalogo = new Catalogo();
+
+let opcion;
+
+do {
+  opcion = prompt(
+    "Menú:\n" +
+      "1. Agregar auto\n" +
+      "2. Mostrar catálogo\n" +
+      "3. Ordenar autos por precio\n" +
+      "4. Filtrar por marca\n" +
+      "5. Buscar auto por modelo\n" +
+      "6. Salir (Si es primera vez, salir y actualizar)\n" +
+      "Ingrese una opción:"
+  );
+
+  switch (opcion) {
+    case "1":
+      const marca = prompt("Ingrese la marca del auto:");
+      const modelo = prompt("Ingrese el modelo del auto:");
+      const anio = prompt("Ingrese el año del auto:");
+      const kilometros = prompt("Ingrese los kilómetros recorridos:");
+      const precio = prompt("Ingrese el precio del auto:");
+      const id = catalogo.autos.length + 1;
+      if (!marca || !modelo || !anio || !kilometros || !precio) {
+        alert("Todos los campos son obligatorios.");
+        break;
+      }
+      const auto = new Auto(marca, modelo, anio, kilometros, precio, id);
+      catalogo.agregarAuto(auto);
+      alert("Auto agregado al catálogo.");
+      break;
+    case "2":
+      const autos = catalogo.listarAutos();
+      if (autos.length === 0) {
+        alert("El catálogo está vacío.");
+      } else {
+        alert("Catálogo cargado en consola");
+        console.log(catalogo.listarAutos());
+      }
+      break;
+    case "3":
+      if (catalogo.autos.length === 0) {
+        alert("El catálogo está vacío.");
+        break;
+      }else {
+        alert("Autos ordenados por precio en consola");
+        console.log(catalogo.ordenarAutosPorPrecio());
+        break;
+      }
+    case "4":
+      let marcaFiltro = prompt("Ingrese la marca que quiera buscar:");
+        if (!marcaFiltro) {
+        alert("La marca es obligatoria.");
+        break;
+      }
+      if (catalogo.filtrarAutosPorMarca(marcaFiltro) === 0) {
+        alert("No se encontraron autos de esa marca.");
+      } else {
+        alert("Autos filtrados por marca en consola");
+        console.log(catalogo.filtrarAutosPorMarca(marcaFiltro));
+      }
+      break;
+    case "5":
+      let modeloBuscar = prompt("Ingrese el modelo que quiera buscar:");
+      if (!modeloBuscar) {
+        alert("El modelo es obligatorio.");
+        break;
+      }
+      const autoEncontrado = catalogo.buscarAutoPorModelo(modeloBuscar);
+      if (autoEncontrado) {
+        alert(
+          "Auto se muestra en consola");
+        console.log(
+          `${autoEncontrado.marca} ${autoEncontrado.modelo} (${autoEncontrado.anio}) - ${autoEncontrado.kilometros} km - $${autoEncontrado.precio} - ID: ${autoEncontrado.id}`);
+      } else {
+        alert("No se encontró el auto.");
+      }
+      break;
+    case "6":
+      alert("Saliendo del programa.");
+      break;
+    default:
+      alert("Opción no válida. Intente nuevamente.");
   }
-}
-
-const autos = [
-  new Auto("Chevrolet", "Onix", 50000, 5500000),
-  new Auto("Renault", "Sandero", 70000, 4800000),
-  new Auto("Toyota", "Yaris", 120000, 6200000),
-];
-let cotizacionDolar = 1100; // Simulación de cotización
-
-// === FUNCIONES ===
-
-// Mostrar catálogo completo en consola
-function mostrarCatalogo() {
-    console.log("=== Catálogo de Autos ===");
-    for (let i = 0; i < autos.length; i++) {
-        console.log(`${i + 1}. ${autos[i].marca} ${autos[i].modelo} - $${autos[i].precio}`);
-    }
-}
-
-// Ordenar autos por marca
-function ordenarPorMarca() {
-  return autos.sort((a, b) => a.marca.localeCompare(b.marca));
-}
-
-// Ordenar autos por precio
-function ordenarPorPrecio(ascendente = true) {
-  return autos.sort((a, b) =>
-    ascendente ? a.precio - b.precio : b.precio - a.precio
-  );
-}
-
-// Ordenar autos por kilometraje
-function ordenarPorKilometros(ascendente = true) {
-  return autos.sort((a, b) =>
-    ascendente ? a.kilometros - b.kilometros : b.kilometros - a.kilometros
-  );
-}
-
-// Convertir precios a dólares
-function convertirADolares(precioEnPesos) {
-  return (precioEnPesos / cotizacionDolar).toFixed(2);
-}
-
-// Simular cotización de un auto
-function cotizarAuto() {
-  let modeloIngresado = prompt(
-    "Ingresá el modelo del auto que querés cotizar (Onix, Sandero, Yaris):"
-  );
-  let autoEncontrado = autos.find(
-    (auto) => auto.modelo.toLowerCase() === modeloIngresado.toLowerCase()
-  );
-
-  if (autoEncontrado) {
-    let precioUSD = convertirADolares(autoEncontrado.precio);
-    alert(
-      `El ${autoEncontrado.marca} ${autoEncontrado.modelo} cuesta $${autoEncontrado.precio} (${precioUSD} USD aprox).`
-    );
-  } else {
-    alert(
-      "No encontramos ese modelo. Por favor, revisá el nombre e intentá de nuevo."
-    );
-  }
-}
-
-// Calcular precio con descuento
-function calcularDescuento(precio, porcentaje) {
-  return precio - (precio * porcentaje) / 100;
-}
-
-//Funciones futuras
-
-//For each para mostrar autos del catálogo
-
-// Funcion para redirigir a contacto con información del auto seleccionado
+} while (opcion !== "6" && opcion !== null);
