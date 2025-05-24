@@ -24,13 +24,11 @@ do {
       const anio = prompt("Ingrese el año del auto:");
       const kilometros = prompt("Ingrese los kilómetros recorridos:");
       const precio = prompt("Ingrese el precio del auto:");
-      const id = catalogo.autos.length + 1;
       if (!marca || !modelo || !anio || !kilometros || !precio) {
         alert("Todos los campos son obligatorios.");
         break;
       }
-      const auto = new Auto(marca, modelo, anio, kilometros, precio, id);
-      catalogo.agregarAuto(auto);
+      catalogo.agregarAuto(marca, modelo, anio, kilometros, precio);
       alert("Auto agregado al catálogo.");
       break;
     case "2":
@@ -43,26 +41,22 @@ do {
       }
       break;
     case "3":
-      if (catalogo.autos.length === 0) {
+      if (!catalogo.tieneAutos()) {
         alert("El catálogo está vacío.");
         break;
-      }else {
+      } else {
         alert("Autos ordenados por precio en consola");
         console.log(catalogo.ordenarAutosPorPrecio());
         break;
       }
     case "4":
       let marcaFiltro = prompt("Ingrese la marca que quiera buscar:");
-        if (!marcaFiltro) {
+      if (!marcaFiltro) {
         alert("La marca es obligatoria.");
         break;
       }
-      if (catalogo.filtrarAutosPorMarca(marcaFiltro) === 0) {
-        alert("No se encontraron autos de esa marca.");
-      } else {
-        alert("Autos filtrados por marca en consola");
-        console.log(catalogo.filtrarAutosPorMarca(marcaFiltro));
-      }
+      alert("Autos filtrados por marca en consola");
+      console.log(catalogo.filtrarAutosPorMarca(marcaFiltro));
       break;
     case "5":
       let modeloBuscar = prompt("Ingrese el modelo que quiera buscar:");
@@ -72,10 +66,10 @@ do {
       }
       const autoEncontrado = catalogo.buscarAutoPorModelo(modeloBuscar);
       if (autoEncontrado) {
-        alert(
-          "Auto se muestra en consola");
+        alert("Auto se muestra en consola");
         console.log(
-          `${autoEncontrado.marca} ${autoEncontrado.modelo} (${autoEncontrado.anio}) - ${autoEncontrado.kilometros} km - $${autoEncontrado.precio} - ID: ${autoEncontrado.id}`);
+          `${autoEncontrado.marca} ${autoEncontrado.modelo} (${autoEncontrado.anio}) - ${autoEncontrado.kilometros} km - $${autoEncontrado.precio} - ID: ${autoEncontrado.id}`
+        );
       } else {
         alert("No se encontró el auto.");
       }

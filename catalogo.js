@@ -10,8 +10,10 @@ class Catalogo {
         ];
     }
 
-    agregarAuto(auto) {
-        this.autos.push(auto);
+    agregarAuto(marca, modelo, anio, kilometros, precio) {
+        const id = this.autos.length + 1;
+        const nuevoAuto = new Auto(marca, modelo, anio, kilometros, precio, id);
+        this.autos.push(nuevoAuto);
     }
 
     listarAutos() {
@@ -40,6 +42,9 @@ class Catalogo {
                 resultado += `${auto.marca} ${auto.modelo} (${auto.anio}) - ${auto.kilometros} km - $${auto.precio}\n`;
             }
         }
+        if (resultado === '') {
+            return 'No se encontraron autos de esa marca.';
+        }
         return resultado;
     }
 
@@ -54,9 +59,21 @@ class Catalogo {
                 }
             }
         }
-        return this.autos;
+        let resultado = '';
+        for (let i = 0; i < this.autos.length; i++) {
+            const auto = this.autos[i];
+            resultado += `${auto.marca} ${auto.modelo} (${auto.anio}) - ${auto.kilometros} km - $${auto.precio} - ${auto.id}\n`;
+        }
+        return resultado.trim();
     }
 
+    tieneAutos() {
+        if (this.autos.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 }
 
