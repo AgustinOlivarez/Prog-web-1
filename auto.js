@@ -8,6 +8,14 @@ class Auto {
         this.id = parseInt(id)
     }
 
+    actualizarPrecio(nuevoPrecio) {
+        this.precio = parseFloat(nuevoPrecio);
+    }
+
+    getInformacion() {
+        return `${this.marca} ${this.modelo} (${this.anio}) - ${this.kilometros} km - $${this.precio}`;
+    }
+
 }
 
 export default Auto;
