@@ -46,36 +46,67 @@
       </nav>
     </header>
 
-    <main>
-      <section>
-        <h2 id="autos">Nuestros autos</h2>
-        <div class="autos-container">
-          <!-- Auto 1 -->
-          <article class="auto-card">
-            <img src="assets/onix.avif" alt="Auto Chevrolet" />
-            <p>Nombre auto - Modelo - Kilómetros</p>
-            <p><strong>$Precio</strong></p>
-            <button>Me interesa</button>
-          </article>
-
-          <!-- Auto 2 -->
-          <article class="auto-card">
-            <img src="assets/sandero.jpg" alt="Auto Renault" />
-            <p>Nombre auto - Modelo - Kilómetros</p>
-            <p><strong>$Precio</strong></p>
-            <button>Me interesa</button>
-          </article>
-
-          <!-- Auto 3 -->
-          <article class="auto-card">
-            <img src="assets/yaris.png" alt="Auto Toyota" />
-            <p>Nombre auto - Modelo - Kilómetros</p>
-            <p><strong>$Precio</strong></p>
-            <button>Me interesa</button>
-          </article>
+<main class="container-catalogo my-4">
+  <div class="row">
+    <!-- Aside de filtros -->
+    <aside class="aside-catalogo col-md-3">
+      <form>
+        <div class="mb-3">
+          <h2>Filtros</h2>
+          <label for="marca" class="form-label">Marca</label>
+          <select class="form-select" id="marca">
+            <option selected>Todos</option>
+            <option>Chevrolet</option>
+            <option>Renault</option>
+            <option>Toyota</option>
+          </select>
         </div>
-      </section>
-    </main>
+
+        <div class="mb-3">
+          <label for="precioMax" class="form-label">Precio máximo</label>
+          <input type="number" class="form-control" id="precioMax" placeholder="$">
+        </div>
+
+        <div class="mb-3">
+          <label for="kmMax" class="form-label">Máximo de kilómetros</label>
+          <input type="number" class="form-control" id="kmMax" placeholder="e.g. 50000">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Aplicar filtros</button>
+      </form>
+    </aside>
+
+    <!-- Catálogo de autos -->
+    <section class="col-md-9">
+      <h2 id="autos">Nuestros autos</h2>
+      <div class="autos-container">
+        <!-- Auto 1 -->
+        <article class="auto-card">
+          <img src="assets/onix.avif" alt="Auto Chevrolet" />
+          <p>Chevrolet Onix - 2020 - 45.000 km</p>
+          <p><strong>$3.500.000</strong></p>
+          <button>Me interesa</button>
+        </article>
+
+        <!-- Auto 2 -->
+        <article class="auto-card">
+          <img src="assets/sandero.jpg" alt="Auto Renault" />
+          <p>Renault Sandero - 2019 - 60.000 km</p>
+          <p><strong>$3.000.000</strong></p>
+          <button>Me interesa</button>
+        </article>
+
+        <!-- Auto 3 -->
+        <article class="auto-card">
+          <img src="assets/yaris.png" alt="Auto Toyota" />
+          <p>Toyota Yaris - 2021 - 30.000 km</p>
+          <p><strong>$4.000.000</strong></p>
+          <button>Me interesa</button>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
 
     <footer>
       <div class="logo">

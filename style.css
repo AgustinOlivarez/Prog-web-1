@@ -83,8 +83,13 @@ main {
 }
 
 /* Tarjetas de autos */
+.container-catalogo{
+  margin-left: 0%;
+}
 .auto-card {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
   background-color: transparent;
   border-radius: 16px;
   overflow: hidden;
@@ -122,6 +127,20 @@ main {
   border-bottom: #1a0d33 solid 10px;
   border-bottom-left-radius: 16px;
 }
+
+.aside-catalogo{
+  background-color: #e0dddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  width: auto;
+}
+.aside-catalogo form {
+margin: 0%;
+}
+
+
 
 /* Carrusel */
 .carousel-item {
