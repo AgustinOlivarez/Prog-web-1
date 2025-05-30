@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,96 +16,149 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.html">
             <div class="logo">
               <h1>Fierrópolis</h1>
               <h2>La ciudad del buen fierro</h2>
             </div>
-            </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto nav-links">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Catálogo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cotiza.html">Cotizá tu auto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-        </ul>
+            <ul class="navbar-nav ms-auto nav-links">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Catálogo</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cotiza.html">Cotizá tu auto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
 
-<main class="container-catalogo my-4">
-  <div class="row">
-    <!-- Aside de filtros -->
-    <aside class="aside-catalogo col-md-3">
-      <form>
-        <div class="mb-3">
-          <h2>Filtros</h2>
-          <label for="marca" class="form-label">Marca</label>
-          <select class="form-select" id="marca">
-            <option selected>Todos</option>
-            <option>Chevrolet</option>
-            <option>Renault</option>
-            <option>Toyota</option>
-          </select>
-        </div>
+    <main class="container-catalogo my-4">
+      <div class="row">
+        <!-- Aside de filtros -->
+        <aside class="aside-catalogo col-md-3">
+          <form id="form-filtros" onsubmit="filtrarAutos(event)">
+            <div class="mb-3">
+              <h2>Filtros</h2>
+              <label for="marca" class="form-label">Marca</label>
+              <select class="form-select" id="marca">
+                <option value="">Todos</option>
+                <option>Chevrolet</option>
+                <option>Renault</option>
+                <option>Toyota</option>
+              </select>
+            </div>
 
-        <div class="mb-3">
-          <label for="precioMax" class="form-label">Precio máximo</label>
-          <input type="number" class="form-control" id="precioMax" placeholder="$">
-        </div>
+            <div class="mb-3">
+              <label for="precioMax" class="form-label">Precio máximo</label>
+              <input
+                type="number"
+                class="form-control"
+                id="precioMax"
+                placeholder="$"
+              />
+            </div>
 
-        <div class="mb-3">
-          <label for="kmMax" class="form-label">Máximo de kilómetros</label>
-          <input type="number" class="form-control" id="kmMax" placeholder="e.g. 50000">
-        </div>
+            <div class="mb-3">
+              <label for="kmMax" class="form-label">Máximo de kilómetros</label>
+              <input
+                type="number"
+                class="form-control"
+                id="kmMax"
+                placeholder="e.g. 50000"
+              />
+            </div>
 
-        <button type="submit" class="btn btn-primary">Aplicar filtros</button>
-      </form>
-    </aside>
+            <button type="submit">Aplicar filtros</button>
+          </form>
 
-    <!-- Catálogo de autos -->
-    <section class="col-md-9">
-      <h2 id="autos">Nuestros autos</h2>
-      <div class="autos-container">
-        <!-- Auto 1 -->
-        <article class="auto-card">
-          <img src="assets/onix.avif" alt="Auto Chevrolet" />
-          <p>Chevrolet Onix - 2020 - 45.000 km</p>
-          <p><strong>$3.500.000</strong></p>
-          <button>Me interesa</button>
-        </article>
+          <form id="form-agregar-auto" onsubmit="agregarAuto(event)">
+            <h2>Agregar auto</h2>
+            <div class="mb-3">
+              <label for="marcaAgregar" class="form-label">Marca</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Marca"
+                id="marcaAgregar"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="modeloAgregar" class="form-label">Modelo</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Modelo"
+                id="modeloAgregar"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="kmAgregar" class="form-label">Kilómetros</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Kilómetros"
+                id="kmAgregar"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="precioAgregar" class="form-label">Precio</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Precio"
+                id="precioAgregar"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="imagenAgregar" class="form-label"
+                >URL de imagen</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="URL de imagen"
+                id="imagenAgregar"
+                required
+              />
+            </div>
+            <button type="submit">Agregar</button>
+          </form>
+        </aside>
 
-        <!-- Auto 2 -->
-        <article class="auto-card">
-          <img src="assets/sandero.jpg" alt="Auto Renault" />
-          <p>Renault Sandero - 2019 - 60.000 km</p>
-          <p><strong>$3.000.000</strong></p>
-          <button>Me interesa</button>
-        </article>
-
-        <!-- Auto 3 -->
-        <article class="auto-card">
-          <img src="assets/yaris.png" alt="Auto Toyota" />
-          <p>Toyota Yaris - 2021 - 30.000 km</p>
-          <p><strong>$4.000.000</strong></p>
-          <button>Me interesa</button>
-        </article>
+        <!-- Catálogo de autos -->
+        <section class="col-md-9">
+          <h2 id="autos">Nuestros autos</h2>
+          <div id="autos-container" class="autos-container"></div>
+        </section>
       </div>
-    </section>
-  </div>
-</main>
+    </main>
 
     <footer>
       <div class="logo">
@@ -125,7 +177,11 @@
         <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="catalogo.js"></script>
   </body>
 </html>
-
