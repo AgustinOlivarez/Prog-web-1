@@ -1,83 +1,152 @@
-// import Catalogo from "./catalogo.js";
-// import Auto from "./auto.js";
+import { Auto } from './auto.js';
+import { Catalogo } from './catalogo.js';
 
-// let catalogo = new Catalogo();
+// Autos por defecto (solo se usan si no hay en localStorage)
+const autosDefault = [
+  {
+    marca: 'Chevrolet',
+    modelo: 'Onix',
+    anio: 2020,
+    km: 45000,
+    precio: 3200000,
+    imagen: 'assets/onix.avif',
+  },
+  {
+    marca: 'Renault',
+    modelo: 'Sandero',
+    anio: 2019,
+    km: 65000,
+    precio: 2800000,
+    imagen: 'assets/sandero.jpg',
+  },
+  {
+    marca: 'Toyota',
+    modelo: 'Yaris',
+    anio: 2021,
+    km: 25000,
+    precio: 3900000,
+    imagen: 'assets/yaris.png',
+  },
+];
 
-// let opcion;
+// Cargar autos desde localStorage o usar los de por defecto
+let autos = JSON.parse(localStorage.getItem('autos')) || autosDefault;
 
-// do {
-//   opcion = prompt(
-//     "Menú:\n" +
-//       "1. Agregar auto\n" +
-//       "2. Mostrar catálogo\n" +
-//       "3. Ordenar autos por precio\n" +
-//       "4. Filtrar por marca\n" +
-//       "5. Buscar auto por modelo\n" +
-//       "6. Salir (Si es primera vez, salir y actualizar)\n" +
-//       "Ingrese una opción:"
-//   );
+const catalogo = new Catalogo();
 
-//   switch (opcion) {
-//     case "1":
-//       const marca = prompt("Ingrese la marca del auto:");
-//       const modelo = prompt("Ingrese el modelo del auto:");
-//       const anio = prompt("Ingrese el año del auto:");
-//       const kilometros = prompt("Ingrese los kilómetros recorridos:");
-//       const precio = prompt("Ingrese el precio del auto:");
-//       if (!marca || !modelo || !anio || !kilometros || !precio) {
-//         alert("Todos los campos son obligatorios.");
-//         break;
-//       }
-//       catalogo.agregarAuto(marca, modelo, anio, kilometros, precio);
-//       alert("Auto agregado al catálogo.");
-//       break;
-//     case "2":
-//       const autos = catalogo.listarAutos();
-//       if (autos.length === 0) {
-//         alert("El catálogo está vacío.");
-//       } else {
-//         alert("Catálogo cargado en consola");
-//         console.log(catalogo.listarAutos());
-//       }
-//       break;
-//     case "3":
-//       if (!catalogo.tieneAutos()) {
-//         alert("El catálogo está vacío.");
-//         break;
-//       } else {
-//         alert("Autos ordenados por precio en consola");
-//         console.log(catalogo.ordenarAutosPorPrecio());
-//         break;
-//       }
-//     case "4":
-//       let marcaFiltro = prompt("Ingrese la marca que quiera buscar:");
-//       if (!marcaFiltro) {
-//         alert("La marca es obligatoria.");
-//         break;
-//       }
-//       alert("Autos filtrados por marca en consola");
-//       console.log(catalogo.filtrarAutosPorMarca(marcaFiltro));
-//       break;
-//     case "5":
-//       let modeloBuscar = prompt("Ingrese el modelo que quiera buscar:");
-//       if (!modeloBuscar) {
-//         alert("El modelo es obligatorio.");
-//         break;
-//       }
-//       const autoEncontrado = catalogo.buscarAutoPorModelo(modeloBuscar);
-//       if (autoEncontrado) {
-//         alert("Auto se muestra en consola");
-//         console.log(
-//           `${autoEncontrado.marca} ${autoEncontrado.modelo} (${autoEncontrado.anio}) - ${autoEncontrado.kilometros} km - $${autoEncontrado.precio} - ID: ${autoEncontrado.id}`
-//         );
-//       } else {
-//         alert("No se encontró el auto.");
-//       }
-//       break;
-//     case "6":
-//       alert("Saliendo del programa.");
-//       break;
-//     default:
-//       alert("Opción no válida. Intente nuevamente.");
-//   }
-// } while (opcion !== "6" && opcion !== null);
+document.addEventListener('DOMContentLoaded', () => {
+  autos.forEach(auto =>
+    catalogo.agregarAuto(
+      auto.marca,
+      auto.modelo,
+      auto.anio,
+      auto.km,
+      auto.precio,
+      auto.imagen,
+      auto.id
+    )
+  );
+
+  // Recuperar filtros guardados
+  const filtrosGuardados = JSON.parse(localStorage.getItem('filtros'));
+  if (filtrosGuardados) {
+    document.getElementById('marca').value = filtrosGuardados.marca || '';
+    document.getElementById('precioMax').value = filtrosGuardados.precioMax || document.getElementById('precioMax').min;
+    document.getElementById('kmRange').value = filtrosGuardados.kmMax || document.getElementById('kmRange').min;
+
+    actualizarValoresVisibles(filtrosGuardados.precioMax, filtrosGuardados.kmMax);
+
+    catalogo.filtrarAutos(
+      filtrosGuardados.marca,
+      parseFloat(filtrosGuardados.precioMax),
+      parseFloat(filtrosGuardados.kmMax)
+    );
+  } else {
+    catalogo.renderAutos();
+    actualizarValoresVisibles(
+      document.getElementById('precioMax').value,
+      document.getElementById('kmRange').value
+    );
+  }
+});
+
+// Filtro
+function filtrarAutos(event) {
+  event.preventDefault();
+
+  const marca = document.getElementById('marca').value;
+  const precioMax = parseFloat(document.getElementById('precioMax').value);
+  const kmMax = parseFloat(document.getElementById('kmRange').value);
+
+  localStorage.setItem(
+    'filtros',
+    JSON.stringify({ marca, precioMax, kmMax })
+  );
+
+  actualizarValoresVisibles(precioMax, kmMax);
+
+  catalogo.filtrarAutos(marca, precioMax, kmMax);
+}
+
+// Agregar auto
+function agregarAuto(event) {
+  event.preventDefault();
+
+  const marca = document.getElementById('marcaAgregar').value;
+  const modelo = document.getElementById('modeloAgregar').value;
+  const anio = parseInt(document.getElementById('anioAgregar').value);
+  const kilometros = parseInt(document.getElementById('kmAgregar').value);
+  const precio = parseFloat(document.getElementById('precioAgregar').value);
+  const imagen = document.getElementById('imagenAgregar').value;
+
+  const nuevoAuto = {
+    marca,
+    modelo,
+    anio,
+    km: kilometros,
+    precio,
+    imagen,
+    id: Date.now(), // ID único usando timestamp
+  };
+
+  autos.push(nuevoAuto);
+  localStorage.setItem('autos', JSON.stringify(autos));
+
+  catalogo.agregarAuto(
+    nuevoAuto.marca,
+    nuevoAuto.modelo,
+    nuevoAuto.anio,
+    nuevoAuto.km,
+    nuevoAuto.precio,
+    nuevoAuto.imagen,
+    nuevoAuto.id
+  );
+
+  catalogo.renderAutos();
+}
+
+// Actualizar valores visibles
+function actualizarValoresVisibles(precioMax, kmMax) {
+  document.getElementById('rangeCurrentValue').textContent = formatearPrecio(precioMax);
+  document.getElementById('kmRangeCurrentValue').textContent = formatearKilometros(kmMax);
+}
+
+function formatearPrecio(valor) {
+  return '$' + valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function formatearKilometros(valor) {
+  return valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' km';
+}
+
+// Listeners
+document.getElementById('form-filtros').addEventListener('submit', filtrarAutos);
+document.getElementById('form-agregar-auto').addEventListener('submit', agregarAuto);
+
+document.getElementById('precioMax').addEventListener('input', (e) => {
+  actualizarValoresVisibles(e.target.value, document.getElementById('kmRange').value);
+});
+
+document.getElementById('kmRange').addEventListener('input', (e) => {
+  actualizarValoresVisibles(document.getElementById('precioMax').value, e.target.value);
+});
