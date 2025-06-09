@@ -141,6 +141,41 @@ main {
   margin: 0%;
   margin-bottom: 1rem;
 }
+.aside-catalogo form button{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+/* Range values de filtros */
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.range-values span {
+  font-size: 0.8rem;
+}
+
+#kmRange::-webkit-slider-thumb,
+#precioMax::-webkit-slider-thumb {
+  background-color: rgb(153, 102, 255);
+
+}
+
+#kmRange::-moz-range-thumb,
+#precioMax::-moz-range-thumb {
+  background-color: rgb(153, 102, 255);
+
+}
+
+#kmRange::-ms-thumb,
+#precioMax::-ms-thumb {
+  background-color: rgb(153, 102, 255);
+
+}
 
 
 

@@ -59,7 +59,7 @@
       <div class="row">
         <!-- Aside de filtros -->
         <aside class="aside-catalogo col-md-3">
-          <form id="form-filtros" onsubmit="filtrarAutos(event)">
+          <form id="form-filtros">
             <div class="mb-3">
               <h2>Filtros</h2>
               <label for="marca" class="form-label">Marca</label>
@@ -72,36 +72,51 @@
             </div>
 
             <div class="mb-3">
-              <label for="precioMax" class="form-label">Precio máximo</label>
+              <label for="precioRange" class="form-label"
+                >Precio Máximo</label
+              >
               <input
-                type="number"
-                class="form-control"
+                type="range"
+                class="form-range"
+                min="1000000"
+                max="10000000"
                 id="precioMax"
-                placeholder="$"
               />
+              <div class="range-values">
+                <span id="rangeMinValue">$1.000.000</span>
+                <span id="rangeCurrentValue">$5.500.000</span>
+                <span id="rangeMaxValue">$10.000.000</span>
+              </div>
             </div>
 
             <div class="mb-3">
-              <label for="kmMax" class="form-label">Máximo de kilómetros</label>
+              <label for="kmRange" class="form-label">Km´s Máximo</label>
               <input
-                type="number"
-                class="form-control"
-                id="kmMax"
-                placeholder="e.g. 50000"
+              type="range"
+              class="form-range"
+              min="0"
+              max="200000"
+              step="1000"
+              id="kmRange"
               />
+              <div class="range-values">
+              <span id="kmRangeMinValue">0 km</span>
+              <span id="kmRangeCurrentValue">100.000 km</span>
+              <span id="kmRangeMaxValue">200.000 km</span>
+              </div>
             </div>
 
             <button type="submit">Aplicar filtros</button>
           </form>
 
-          <form id="form-agregar-auto" onsubmit="agregarAuto(event)">
+          <form id="form-agregar-auto">
             <h2>Agregar auto</h2>
             <div class="mb-3">
               <label for="marcaAgregar" class="form-label">Marca</label>
               <input
                 type="text"
                 class="form-control"
-                placeholder="Marca"
+                placeholder="Marca del auto"
                 id="marcaAgregar"
                 required
               />
@@ -111,8 +126,18 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Modelo"
+                placeholder="Modelo del auto"
                 id="modeloAgregar"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="anioAgregar" class="form-label">Año</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Año del auto"
+                id="anioAgregar"
                 required
               />
             </div>
@@ -121,7 +146,7 @@
               <input
                 type="number"
                 class="form-control"
-                placeholder="Kilómetros"
+                placeholder="Kilómetros del auto"
                 id="kmAgregar"
                 required
               />
@@ -131,7 +156,7 @@
               <input
                 type="number"
                 class="form-control"
-                placeholder="Precio"
+                placeholder="Precio del auto"
                 id="precioAgregar"
                 required
               />
@@ -143,7 +168,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="URL de imagen"
+                placeholder="Imagen del auto"
                 id="imagenAgregar"
                 required
               />
@@ -182,6 +207,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
-    <script src="catalogo.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
