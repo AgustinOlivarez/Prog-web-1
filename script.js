@@ -162,10 +162,33 @@ document.getElementById('kmRange').addEventListener('input', (e) => {
 });
 
 document.getElementById('resetStorage').addEventListener('click', (e) => {
-  //Limpio el localStorage
-  localStorage.removeItem('autos');
-  localStorage.removeItem('filtros');
+  e.preventDefault();
+  // Mostrar SweetAlert para confirmar el reinicio del catálogo
+  Swal.fire({
+    title: '¿Reiniciar catálogo?',
+    text: 'Se eliminarán los autos agregados y los filtros guardados.',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#582aa8',
+    cancelButtonColor: '#9966ff',
+    confirmButtonText: 'Sí, reiniciar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem('autos');
+      localStorage.removeItem('filtros');
 
-  // Recargá la página para que se vuelva a cargar desde autos.json
-  location.reload();
+      Swal.fire({
+        title: 'Catálogo reiniciado',
+        text: 'Los datos se recargarán desde el archivo JSON.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#7b3ef3'
+      }).then(() => {
+        // Recargá la página para que se vuelva a cargar desde autos.json
+        location.reload();
+      });
+    }
+  });
+
 });
