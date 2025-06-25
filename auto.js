@@ -24,7 +24,7 @@ export class Auto {
                 <img src="${this.imagen}" alt="Auto ${this.marca}" />
                 <p>${this.marca} ${this.modelo} (Año ${this.anio}) - ${this.kilometros} km</p>
                 <p><strong>$${this.precio.toLocaleString()}</strong></p>
-                <button>Me interesa</button>
+                <button class="btn-me-interesa">Me interesa</button>
             </article>
         `;
 
