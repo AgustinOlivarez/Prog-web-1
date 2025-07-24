@@ -22,3 +22,6 @@ Con este proyecto lo que buscaremos es diseñar las bases de una página de vent
 
 ## Diagrama de clases:
 [Diagrama](https://drive.google.com/file/d/1pYfFDYXRO31WPnpDhyKjEwhBs2XrfGW9/view?usp=sharing)
+
+## Anexos:
+- [**Anexo - Frameworks y Node JS**](ANEXO.md)
