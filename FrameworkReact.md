@@ -30,6 +30,6 @@ En general, el esfuerzo es razonable y está bien justificado por los beneficios
 
 ## **Ejemplo de código - "Antes y después"**
 
-- **JavaScript puro**:![Codigo_Antes](./assets/Codigo_antes.png)
+- **JavaScript puro**:  ![Codigo_Antes](./assets/Codigo_antes.png)
 
 - **Con React**:![Codigo_Con_React](./assets/Codigo_con_React.png)
