@@ -32,6 +32,7 @@ export class Catalogo {
   }
   
   filtrarAutos(marca, precioMax, kmMax) {
+    //Uso de filter
     const coincidencias = this.autos.filter(auto => {
       const coincideMarca = marca === '' || auto.marca === marca;
       const coincidePrecio = isNaN(precioMax) || auto.precio <= precioMax;

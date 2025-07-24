@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fierrópolis</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -52,7 +53,7 @@
         <section>
 
 
-            <form class="enviar-consulta" action="enviar-consulta">
+            <form class="enviar-consulta">
                 <h2>Hacenos tu consulta</h2>
                 <div class="row">
 
@@ -99,23 +100,46 @@
     </main>
 
     <footer>
-        <div class="logo">
-            <h1>Fierrópolis</h1>
-            <h2>La ciudad del buen fierro</h2>
-        </div>
-        <nav class="footer-links">
-            <ul>
-                <li><a href="#">Acerca nuestro</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Nuestras redes:</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <!-- Aquí irían los íconos de redes sociales -->
-            <!-- Ej: <img src="facebook-icon.png" alt="Facebook"> -->
-        </div>
+      <div class="logo">
+        <h1>Fierrópolis</h1>
+        <h2>La ciudad del buen fierro</h2>
+      </div>
+      <nav class="footer-links">
+        <ul>
+          <li><a href="#">Acerca nuestro</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Nuestras redes:</a></li>
+          <li>
+            <div class="social-icons">
+              <a
+                href="https://wa.me/541123456789"
+                target="_blank"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp fa-2x" style="color: #25d366"></i>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram fa-2x" style="color: #e440a0"></i>
+              </a>
+              <a
+                href="mailto:agustinolivarez29@gmail.com"
+                target="_blank"
+                aria-label="Gmail"
+              >
+                <i class="fas fa-envelope fa-2x" style="color: #582aa8"></i>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="formularioConsulta.js"></script>
+  </body>
 </html>

@@ -147,6 +147,20 @@ main {
   width: 50%;
 }
 
+#resetStorage {
+  width: 80%;
+  background-color: #9966ff;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+
 /* Range values de filtros */
 
 .range-values {
@@ -370,7 +384,7 @@ form button {
   justify-self: center;
 }
 
-form button:hover {
+form button:hover, #resetStorage:hover {
   background-color: #582aa8;
 }
 
@@ -435,6 +449,11 @@ footer {
     max-width: 100%;
     margin: 0, 5rem;
     padding: 1rem;
+  }
+
+  #resetStorage {
+    width: 100%;
+    margin-top: 1rem;
   }
 
   form input,

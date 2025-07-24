@@ -1,40 +1,49 @@
 import { Auto } from './auto.js';
 import { Catalogo } from './catalogo.js';
 
-// Autos por defecto (solo se usan si no hay en localStorage)
-const autosDefault = [
-  {
-    marca: 'Chevrolet',
-    modelo: 'Onix',
-    anio: 2020,
-    km: 45000,
-    precio: 3200000,
-    imagen: 'assets/onix.avif',
-  },
-  {
-    marca: 'Renault',
-    modelo: 'Sandero',
-    anio: 2019,
-    km: 65000,
-    precio: 2800000,
-    imagen: 'assets/sandero.jpg',
-  },
-  {
-    marca: 'Toyota',
-    modelo: 'Yaris',
-    anio: 2021,
-    km: 25000,
-    precio: 3900000,
-    imagen: 'assets/yaris.png',
-  },
-];
+// Cargar autos desde localStorage o desde un archivo JSON
 
-// Cargar autos desde localStorage o usar los de por defecto
-let autos = JSON.parse(localStorage.getItem('autos')) || autosDefault;
+let autos = [];
 
+async function cargarAutos() {
+  const autosGuardados = JSON.parse(localStorage.getItem('autos'));
+
+  if (autosGuardados) {
+    autos = autosGuardados;
+  } else {
+    try {
+      const response = await fetch('api/autos.json');
+      if (!response.ok) throw new Error('No se pudo cargar autos.json');
+      autos = await response.json();
+      localStorage.setItem('autos', JSON.stringify(autos)); // Guardarlos para persistencia
+    } catch (err) {
+      console.error('Error cargando autos:', err);
+    }
+  }
+}
 const catalogo = new Catalogo();
 
-document.addEventListener('DOMContentLoaded', () => {
+function poblarOpcionesDeMarca(autos) {
+  const selectMarca = document.getElementById('marca');
+
+  // Obtener marcas únicas (Uso de map)
+  const marcasUnicas = [...new Set(autos.map(auto => auto.marca))].sort();
+
+  // Vaciar y agregar "Todos"
+  selectMarca.innerHTML = '<option value="">Todos</option>';
+
+  // Agregar marcas al select
+  marcasUnicas.forEach(marca => {
+    const option = document.createElement('option');
+    option.value = marca;
+    option.textContent = marca;
+    selectMarca.appendChild(option);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', async() => {
+  await cargarAutos();
+
   autos.forEach(auto =>
     catalogo.agregarAuto(
       auto.marca,
@@ -46,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       auto.id
     )
   );
+  poblarOpcionesDeMarca(autos);
 
   // Recuperar filtros guardados
   const filtrosGuardados = JSON.parse(localStorage.getItem('filtros'));
@@ -149,4 +159,36 @@ document.getElementById('precioMax').addEventListener('input', (e) => {
 
 document.getElementById('kmRange').addEventListener('input', (e) => {
   actualizarValoresVisibles(document.getElementById('precioMax').value, e.target.value);
+});
+
+document.getElementById('resetStorage').addEventListener('click', (e) => {
+  e.preventDefault();
+  // Mostrar SweetAlert para confirmar el reinicio del catálogo
+  Swal.fire({
+    title: '¿Reiniciar catálogo?',
+    text: 'Se eliminarán los autos agregados y los filtros guardados.',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#582aa8',
+    cancelButtonColor: '#9966ff',
+    confirmButtonText: 'Sí, reiniciar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem('autos');
+      localStorage.removeItem('filtros');
+
+      Swal.fire({
+        title: 'Catálogo reiniciado',
+        text: 'Los datos se recargarán desde el archivo JSON.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#7b3ef3'
+      }).then(() => {
+        // Recargá la página para que se vuelva a cargar desde autos.json
+        location.reload();
+      });
+    }
+  });
+
 });
