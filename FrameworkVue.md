@@ -32,6 +32,9 @@ En resumen, Vue es muy accesible y se adapta fácilmente a proyectos nuevos o ex
 
 ## **Ejemplo de código - "Antes y después"**
 
-- **Componente con Vue de un poryecto propio**:![Codigo_Con_Vue](./assets/Codigo_con_Vue.png)
+- **Componente con Vue de un proyecto propio**:  
+  ![Codigo_Con_Vue](./assets/Codigo_con_Vue.png)
 
-- **JavaScript puro**:  ![Codigo_Antes](./assets/Codigo_antes.png)
+- **JavaScript puro**:  
+  ![Codigo_Antes](./assets/Codigo_antes.png)
+
