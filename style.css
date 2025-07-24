@@ -79,12 +79,17 @@ main {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 /* Tarjetas de autos */
+.container-catalogo{
+  margin-left: 0%;
+}
 .auto-card {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
   background-color: transparent;
   border-radius: 16px;
   overflow: hidden;
@@ -122,6 +127,71 @@ main {
   border-bottom: #1a0d33 solid 10px;
   border-bottom-left-radius: 16px;
 }
+
+.aside-catalogo{
+  background-color: #e0dddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.aside-catalogo form {
+  margin: 0%;
+  margin-bottom: 1rem;
+}
+.aside-catalogo form button{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+#resetStorage {
+  width: 80%;
+  background-color: #9966ff;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+
+/* Range values de filtros */
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.range-values span {
+  font-size: 0.8rem;
+}
+
+#kmRange::-webkit-slider-thumb,
+#precioMax::-webkit-slider-thumb {
+  background-color: rgb(153, 102, 255);
+
+}
+
+#kmRange::-moz-range-thumb,
+#precioMax::-moz-range-thumb {
+  background-color: rgb(153, 102, 255);
+
+}
+
+#kmRange::-ms-thumb,
+#precioMax::-ms-thumb {
+  background-color: rgb(153, 102, 255);
+
+}
+
+
 
 /* Carrusel */
 .carousel-item {
@@ -314,7 +384,7 @@ form button {
   justify-self: center;
 }
 
-form button:hover {
+form button:hover, #resetStorage:hover {
   background-color: #582aa8;
 }
 
@@ -379,6 +449,11 @@ footer {
     max-width: 100%;
     margin: 0, 5rem;
     padding: 1rem;
+  }
+
+  #resetStorage {
+    width: 100%;
+    margin-top: 1rem;
   }
 
   form input,
@@ -487,3 +562,4 @@ footer {
     padding: 0% !important;
   }
 }
+

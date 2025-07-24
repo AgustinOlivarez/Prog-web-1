@@ -1,0 +1,123 @@
+[
+  {
+    "marca": "Chevrolet",
+    "modelo": "Onix",
+    "anio": 2020,
+    "km": 45000,
+    "precio": 3200000,
+    "imagen": "assets/onix.avif"
+  },
+  {
+    "marca": "Renault",
+    "modelo": "Sandero",
+    "anio": 2019,
+    "km": 65000,
+    "precio": 2800000,
+    "imagen": "assets/sandero.jpg"
+  },
+  {
+    "marca": "Toyota",
+    "modelo": "Yaris",
+    "anio": 2021,
+    "km": 25000,
+    "precio": 3900000,
+    "imagen": "assets/yaris.png"
+  },
+  {
+    "marca": "Ford",
+    "modelo": "Fiesta",
+    "anio": 2018,
+    "km": 72000,
+    "precio": 2600000,
+    "imagen": "assets/Fiesta.png"
+  },
+  {
+    "marca": "Volkswagen",
+    "modelo": "Gol",
+    "anio": 2017,
+    "km": 81000,
+    "precio": 2300000,
+    "imagen": "assets/gol.png"
+  },
+{
+    "marca": "Peugeot",
+    "modelo": "208",
+    "anio": 2022,
+    "km": 18000,
+    "precio": 4500000,
+    "imagen": "assets/208.png"
+},
+{
+    "marca": "Fiat",
+    "modelo": "Cronos",
+    "anio": 2021,
+    "km": 32000,
+    "precio": 3700000,
+    "imagen": "assets/cronos.png"
+},
+{
+    "marca": "Citroën",
+    "modelo": "C3",
+    "anio": 2020,
+    "km": 40000,
+    "precio": 3100000,
+    "imagen": "assets/c3.png"
+},
+{
+    "marca": "Nissan",
+    "modelo": "Versa",
+    "anio": 2019,
+    "km": 50000,
+    "precio": 3400000,
+    "imagen": "assets/versa.png"
+},
+{
+    "marca": "Honda",
+    "modelo": "Fit",
+    "anio": 2018,
+    "km": 61000,
+    "precio": 3150000,
+    "imagen": "assets/fit.png"
+},
+{
+    "marca": "Chevrolet",
+    "modelo": "Cruze",
+    "anio": 2020,
+    "km": 30000,
+    "precio": 4600000,
+    "imagen": "assets/cruze.png"
+},
+{
+    "marca": "Renault",
+    "modelo": "Kwid",
+    "anio": 2022,
+    "km": 15000,
+    "precio": 2800000,
+    "imagen": "assets/kwid.png"
+},
+{
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "anio": 2021,
+    "km": 29000,
+    "precio": 5000000,
+    "imagen": "assets/corolla.png"
+},
+{
+    "marca": "Peugeot",
+    "modelo": "2008",
+    "anio": 2020,
+    "km": 38000,
+    "precio": 4200000,
+    "imagen": "assets/2008.png"
+},
+{
+    "marca": "Volkswagen",
+    "modelo": "Polo",
+    "anio": 2019,
+    "km": 55000,
+    "precio": 3300000,
+    "imagen": "assets/polo.png"
+}
+  
+]
